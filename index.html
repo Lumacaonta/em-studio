@@ -35,11 +35,22 @@ header.scrolled{
   font-size:14px;
 }
 
-nav{font-size:12px;letter-spacing:2px;}
+nav{
+  font-size:12px;
+  letter-spacing:2px;
+}
 nav a{text-decoration:none;color:#666;transition:0.3s;}
 nav a:hover{color:#b08968;}
 nav span{margin:0 18px;color:#ddd;}
 
+.menu-toggle{
+  display:none;
+  font-size:12px;
+  letter-spacing:2px;
+  cursor:pointer;
+}
+
+/* SECTIONS */
 section{
   padding:220px 10%;
   opacity:0;
@@ -66,15 +77,8 @@ section.visible{
 .hero p{font-size:22px;font-weight:300;max-width:700px;margin:auto;}
 
 /* SERVICES */
-.services{
-  background:#111;
-  color:#fff;
-}
-.services h2{
-  font-size:60px;
-  text-align:center;
-  margin-bottom:80px;
-}
+.services{background:#111;color:#fff;}
+.services h2{font-size:60px;text-align:center;margin-bottom:80px;}
 .price-box{
   border:1px solid #333;
   padding:100px 60px;
@@ -88,57 +92,18 @@ section.visible{
   box-shadow:0 0 120px rgba(176,137,104,0.4);
   transform:translateY(-10px);
 }
-.price-box h3{
-  font-size:30px;
-  margin-bottom:30px;
-  text-align:center;
-  font-weight:400;
-}
-.price{
-  font-size:110px;
-  font-weight:800;
-  text-align:center;
-  text-shadow:0 0 40px rgba(255,255,255,0.4);
-}
-.domain{
-  text-align:center;
-  color:#b08968;
-  margin-top:15px;
-  font-size:18px;
-}
-.price-box p{
-  text-align:center;
-  margin-top:50px;
-  color:#ccc;
-  line-height:1.9;
-  font-weight:300;
-}
+.price-box h3{font-size:30px;margin-bottom:30px;text-align:center;font-weight:400;}
+.price{font-size:110px;font-weight:800;text-align:center;text-shadow:0 0 40px rgba(255,255,255,0.4);}
+.domain{text-align:center;color:#b08968;margin-top:15px;font-size:18px;}
+.price-box p{text-align:center;margin-top:50px;color:#ccc;line-height:1.9;font-weight:300;}
 
 /* PROCESS */
-.process h2{
-  font-size:60px;
-  text-align:center;
-  margin-bottom:80px;
-}
-.process p{
-  max-width:900px;
-  margin:auto;
-  font-size:22px;
-  font-weight:300;
-  line-height:2;
-  color:#555;
-  text-align:center;
-}
+.process h2{font-size:60px;text-align:center;margin-bottom:80px;}
+.process p{max-width:900px;margin:auto;font-size:22px;font-weight:300;line-height:2;color:#555;text-align:center;}
 
 /* WHY */
-.why{
-  background:#f9f9f9;
-}
-.why h2{
-  font-size:60px;
-  text-align:center;
-  margin-bottom:80px;
-}
+.why{background:#f9f9f9;}
+.why h2{font-size:60px;text-align:center;margin-bottom:80px;}
 .why-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -151,39 +116,14 @@ section.visible{
 .why-grid p{color:#555;font-weight:300;line-height:1.8;}
 
 /* FAQ */
-.faq h2{
-  font-size:60px;
-  text-align:center;
-  margin-bottom:80px;
-}
-.faq div{
-  max-width:900px;
-  margin:20px auto;
-  font-size:20px;
-  line-height:2;
-  color:#555;
-}
+.faq h2{font-size:60px;text-align:center;margin-bottom:80px;}
+.faq div{max-width:900px;margin:20px auto;font-size:20px;line-height:2;color:#555;}
 
 /* CONTACT */
-.contact{
-  background:#111;
-  color:#fff;
-  text-align:center;
-}
-.contact h2{
-  font-size:60px;
-  margin-bottom:40px;
-}
-.contact p{
-  max-width:600px;
-  margin:0 auto 50px auto;
-  font-weight:300;
-  color:#ccc;
-}
-.contact-form{
-  max-width:500px;
-  margin:auto;
-}
+.contact{background:#111;color:#fff;text-align:center;}
+.contact h2{font-size:60px;margin-bottom:40px;}
+.contact p{max-width:600px;margin:0 auto 50px auto;font-weight:300;color:#ccc;}
+.contact-form{max-width:500px;margin:auto;}
 .contact-form input,
 .contact-form textarea{
   width:100%;
@@ -202,10 +142,7 @@ section.visible{
   cursor:pointer;
   transition:0.4s;
 }
-.contact-form button:hover{
-  background:#b08968;
-  color:#111;
-}
+.contact-form button:hover{background:#b08968;color:#111;}
 
 footer{
   padding:80px;
@@ -215,6 +152,64 @@ footer{
   font-size:11px;
   letter-spacing:2px;
 }
+
+/* ========================= */
+/*        RESPONSIVE         */
+/* ========================= */
+
+@media (max-width:1024px){
+  section{padding:140px 8%;}
+  .hero h1{font-size:60px;}
+  .services h2,.process h2,.why h2,.faq h2,.contact h2{font-size:45px;}
+  .price{font-size:80px;}
+  .price-box{padding:70px 40px;}
+}
+
+@media (max-width:768px){
+
+  header{padding:18px 6%;}
+
+  .menu-toggle{display:block;}
+
+  nav{
+    position:fixed;
+    top:0;
+    right:-100%;
+    height:100vh;
+    width:70%;
+    background:#fff;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    transition:0.4s ease;
+    box-shadow:-10px 0 40px rgba(0,0,0,0.1);
+  }
+
+  nav.active{right:0;}
+
+  nav span{display:none;}
+  nav a{font-size:14px;}
+
+  section{padding:120px 6%;}
+  .hero{height:90vh;padding-top:100px;}
+  .hero h1{font-size:42px;line-height:1.2;}
+  .hero p{font-size:18px;}
+  .services h2,.process h2,.why h2,.faq h2,.contact h2{font-size:36px;}
+  .price{font-size:60px;}
+  .price-box{padding:50px 25px;}
+  .process p{font-size:18px;}
+  .faq div{font-size:16px;}
+  .why-grid{gap:40px;}
+}
+
+@media (max-width:480px){
+  .hero h1{font-size:32px;}
+  .hero p{font-size:16px;}
+  .price{font-size:48px;}
+  footer{padding:50px 20px;}
+}
 </style>
 </head>
 
@@ -222,7 +217,8 @@ footer{
 
 <header id="header">
   <div class="logo">EM STUDIOS</div>
-  <nav>
+  <div class="menu-toggle" id="menu-toggle">MENU</div>
+  <nav id="nav">
     <a href="#home">HOME</a><span>|</span>
     <a href="#services">SERVIZI</a><span>|</span>
     <a href="#process">COME FUNZIONA</a><span>|</span>
@@ -333,7 +329,14 @@ links.forEach(link=>{
     const offset=header.offsetHeight;
     const topPosition=target.offsetTop-offset;
     window.scrollTo({top:topPosition,behavior:"smooth"});
+    document.getElementById("nav").classList.remove("active");
   });
+});
+
+const toggle=document.getElementById("menu-toggle");
+const nav=document.getElementById("nav");
+toggle.addEventListener("click",()=>{
+  nav.classList.toggle("active");
 });
 </script>
 
